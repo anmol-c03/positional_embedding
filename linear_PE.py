@@ -30,6 +30,17 @@ def linear_pos_enc(self,context_window,channels):#(T,C) on accordance to gpt2 ch
                             it tells that broader positional details are enoded by higher dimensions
                             which will be clear after looking in visualization in its .ipynb file
 
+                    3.The most important reason behind using sin and cosine is 
+                        PE(pos+k) is represented as linear function of PE(pos) 
+                        PE(pos+k,2i)=sin((pos+k)/(1000^(2i/dmodel)))
+
+                        we know
+                            sin(a+b)=sin(a)cos(b)+sin(b)cos(a)
+                            let a=pos/(1000^(2i/dmodel))
+                            let b=k/(1000^(2i/dmodel))
+                        
+                            such that 
+                            PE(pos+k) can be represented as linear function of PE(pos)
             '''
             PE[pos,2*i]=torch.sin(angle)
             PE[pos,2*i+1]=torch.cos(angle)
