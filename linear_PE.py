@@ -1,9 +1,11 @@
 import torch
-def linear_pos_enc(self,context_window,channels):#(T,C) on accordance to gpt2 channels are often called as d_model
+import matplotlib.pyplot as plt
+
+def linear_pos_enc(context_window,channels):#(T,C) on accordance to gpt2 channels are often called as d_model
     PE=torch.zeros(context_window,channels)
     for pos in range(context_window):
         for i in range(channels//2):
-            angle=pos/1000**(2*i/channels)
+            angle=torch.tensor(pos/1000**(2*i/channels))
             '''
                 why use sin and cos ??
                     common question arises.
@@ -55,3 +57,31 @@ pos_enc=linear_pos_enc(context_window,channels)
 # visaulization of positional  embedding
 even_pos_enc=pos_enc[:,::2]
 odd_pos_enc=pos_enc[:,1::2]
+
+plt.figure(figsize=(15, 7))
+for i in range(even_pos_enc
+.shape[1]):
+    plt.plot(range(context_window), even_pos_enc[:, i], label=f'Dimension {2*i}')
+plt.title('Positional Encoding - Even Positions')
+plt.xlabel('Position')
+plt.ylabel('Encoding Value')
+# plt.legend(loc='upper right')
+# plt.savefig('even_pos_enc')
+# plt.show()
+
+# Plot odd positions
+plt.figure(figsize=(15, 7))
+for i in range(odd_pos_enc.shape[1]):
+    plt.plot(range(context_window), odd_pos_enc[:, i], label=f'Dimension {2*i+1}')
+plt.title('Positional Encoding - Odd Positions')
+plt.xlabel('Position')
+plt.ylabel('Encoding Value')
+# plt.legend(loc='upper right')
+# plt.savefig('odd_pos_enc')
+# plt.show()
+
+plt.plot(pos_enc);
+# plt.savefig('linear_pos_enc')
+# plt.show()
+
+# To see the plot one can either visit .ipynb or uncomment plt.savefig() and plt.show()
