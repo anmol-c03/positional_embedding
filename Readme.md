@@ -38,3 +38,9 @@ Positional embeddings are crucial in transformer models as they provide informat
 
 ## Refrences
 
+## References
+
+- Su, J., Gao, Y., & Wang, B. (2021). [RoFormer: Enhanced Transformer with Rotary Position Embedding](https://arxiv.org/abs/2104.09864).
+- Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., ... & Polosukhin, I. (2017). [Attention is All You Need](https://arxiv.org/abs/1706.03762).
+- [ZhuiyiTechnology/roformer](https://github.com/ZhuiyiTechnology/roformer/tree/main?tab=readme-ov-file)
+- [bojone/bert4keras](https://github.com/bojone/bert4keras/tree/master)
