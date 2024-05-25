@@ -27,8 +27,8 @@ Positional embeddings are crucial in transformer models as they provide informat
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/positional-embeddings-transformer.git
-    cd positional-embeddings-transformer
+    git clone https://github.com/anmol-c03/positional_embedding.git
+    cd positional-embeddings
     ```
 
 2. Install the required packages:
